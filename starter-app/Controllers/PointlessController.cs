@@ -5,15 +5,17 @@ namespace starter_app.Controllers;
 
 public class PointlessController: Controller
 {
-    public string Index(){
-        return "This is a pointlessly default action";
+    public IActionResult Index(){
+        return View();
     }
 
-    public string Nonsense( string name, int ID = 1 ){
-        return HtmlEncoder.Default.Encode( 
-            $"{name}, you realize this is from running " +
-            "a nonsensical action method, right?  "+
-            $"You're telling me ID is {ID}, but what are we identifying, "+
-            "really?");
+    public IActionResult Nonsense( string name, int numTimes = 1 )
+    {
+        ViewData["Message"] = 
+            "What's up, <strong>"+ HtmlEncoder.Default.Encode( name )+ "</strong>";
+
+        ViewData["NumTimes"] = numTimes;
+
+        return View();
     }
 }

@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<h2>Welcome</h2>
+
+<ul>
+    @for (int i = 0; i < (int)ViewData["NumTimes"]!; i++)
+    {
+        @:<li>@Html.Raw( ViewData["Message"] )</li>
+    }
+</ul>
+
+<p>You were warned, weren't you?</p>
