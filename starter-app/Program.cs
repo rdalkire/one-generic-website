@@ -1,4 +1,24 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
+
+if(builder.Environment.IsDevelopment())
+{
+    builder.Services.AddDbContext<MvcMovieContext>(options =>
+        options.UseSqlite(
+            builder.Configuration.GetConnectionString("MvcMovieContext") ?? 
+            throw new InvalidOperationException(
+                "DEV Connection string 'MvcMovieContext' not found.")));
+}
+else
+{
+    builder.Services.AddDbContext<MvcMovieContext>(options =>
+        options.UseSqlServer(
+            builder.Configuration.GetConnectionString("MvcMovieContext") ?? 
+            throw new InvalidOperationException(
+                "PROD Connection string 'MvcMovieContext' not found.")));
+}
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
