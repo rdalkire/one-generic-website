@@ -16,7 +16,7 @@ else
 {
     builder.Services.AddDbContext<MvcMovieContext>(options =>
         options.UseSqlServer(
-            builder.Configuration.GetConnectionString("MvcMovieContext") ?? 
+            builder.Configuration.GetConnectionString("ProductionMvcMovieContext") ?? 
             throw new InvalidOperationException(
                 "PROD Connection string 'MvcMovieContext' not found.")));
 }
