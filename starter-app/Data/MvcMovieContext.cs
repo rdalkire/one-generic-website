@@ -13,4 +13,6 @@ using MvcMovie.Models;
         }
 
         public DbSet<MvcMovie.Models.Movie> Movie { get; set; } = default!;
+
+        public DbSet<MvcMovie.Models.HomeText> HomeText { get; set; } = default!;
     }

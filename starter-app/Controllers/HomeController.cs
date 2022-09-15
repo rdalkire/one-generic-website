@@ -13,6 +13,8 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    // TODO Pull custom text from HomeText
+
     public IActionResult Index()
     {
         return View();
