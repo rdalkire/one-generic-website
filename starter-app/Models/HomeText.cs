@@ -15,6 +15,7 @@ namespace MvcMovie.Models
 
         public HomeTextNames Name{get; set;}
 
+        [Required]
         public string? Value{get; set;}
     }
 }

@@ -12,7 +12,8 @@ public class PointlessController: Controller
     public IActionResult Nonsense( string name, int numTimes = 1 )
     {
         ViewData["Message"] = 
-            "What's up, <strong>"+ HtmlEncoder.Default.Encode( name )+ "</strong>";
+            "What's up, <strong>"+ HtmlEncoder.Default.Encode( name )
+            + "</strong>";
 
         ViewData["NumTimes"] = numTimes;
 
