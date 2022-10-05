@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -23,7 +24,8 @@ namespace starter_app.Controllers
         {
               return _context.HomeText != null ? 
                           View(await _context.HomeText.ToListAsync()) :
-                          Problem("Entity set 'MvcMovieContext.HomeText'  is null.");
+                          Problem(
+                            "Entity set 'MvcMovieContext.HomeText' is null.");
         }
 
         // GET: HomeText/Details/5
@@ -51,14 +53,18 @@ namespace starter_app.Controllers
         }
 
         // POST: HomeText/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // To protect from overposting attacks, enable the specific properties 
+        // you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Value")] HomeText homeText)
+        public async Task<IActionResult> Create(
+            [Bind("Id,Name,Value")] HomeText homeText)
         {
+            
             if (ModelState.IsValid)
             {
+                homeText.Value = HtmlEncoder.Default.Encode(homeText.Value!);
                 _context.Add(homeText);
 
                 try
@@ -104,11 +110,13 @@ namespace starter_app.Controllers
         }
 
         // POST: HomeText/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // To protect from overposting attacks, enable the specific properties 
+        // you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Value")] HomeText homeText)
+        public async Task<IActionResult> Edit(int id, 
+            [Bind("Id,Name,Value")] HomeText homeText)
         {
             if (id != homeText.Id)
             {
@@ -117,6 +125,7 @@ namespace starter_app.Controllers
 
             if (ModelState.IsValid)
             {
+                homeText.Value = HtmlEncoder.Default.Encode(homeText.Value!);
                 try
                 {
                     _context.Update(homeText);
@@ -163,7 +172,8 @@ namespace starter_app.Controllers
         {
             if (_context.HomeText == null)
             {
-                return Problem("Entity set 'MvcMovieContext.HomeText'  is null.");
+                return Problem(
+                    "Entity set 'MvcMovieContext.HomeText' is null.");
             }
             var homeText = await _context.HomeText.FindAsync(id);
             if (homeText != null)
