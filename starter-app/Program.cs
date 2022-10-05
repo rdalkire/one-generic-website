@@ -1,8 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MvcMovie.Models;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Console.WriteLine("Assembly name: "+ Assembly.GetExecutingAssembly().FullName);
 
 if(builder.Environment.IsDevelopment())
 {
