@@ -7,10 +7,10 @@ namespace starter_app.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly MvcMovieContext _context;
+    private readonly SomeDbContext _context;
 
     public HomeController(ILogger<HomeController> logger, 
-        MvcMovieContext context)
+        SomeDbContext context)
     {
         _logger = logger;
         _context = context;

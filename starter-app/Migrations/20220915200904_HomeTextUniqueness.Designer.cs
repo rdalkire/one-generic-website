@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace starter_app.Migrations
 {
-    [DbContext(typeof(MvcMovieContext))]
+    [DbContext(typeof(SomeDbContext))]
     [Migration("20220915200904_HomeTextUniqueness")]
     partial class HomeTextUniqueness
     {

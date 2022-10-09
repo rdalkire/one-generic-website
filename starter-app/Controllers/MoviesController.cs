@@ -11,9 +11,9 @@ namespace starter_app.Controllers
 {
     public class MoviesController : Controller
     {
-        private readonly MvcMovieContext _context;
+        private readonly SomeDbContext _context;
 
-        public MoviesController(MvcMovieContext context)
+        public MoviesController(SomeDbContext context)
         {
             _context = context;
         }

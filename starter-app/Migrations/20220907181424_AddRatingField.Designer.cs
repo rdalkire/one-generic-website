@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace starter_app.Migrations
 {
-    [DbContext(typeof(MvcMovieContext))]
+    [DbContext(typeof(SomeDbContext))]
     [Migration("20220907181424_AddRatingField")]
     partial class AddRatingField
     {

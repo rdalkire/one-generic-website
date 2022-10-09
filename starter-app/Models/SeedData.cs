@@ -9,9 +9,9 @@ namespace MvcMovie.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new MvcMovieContext(
+            using (var context = new SomeDbContext(
                 serviceProvider.GetRequiredService<
-                    DbContextOptions<MvcMovieContext>>()))
+                    DbContextOptions<SomeDbContext>>()))
             {
                 bool isSeeding = false;
                 

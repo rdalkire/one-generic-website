@@ -5,9 +5,9 @@ namespace starter_app.ViewComponents
 {
     public class SiteName: ViewComponent
     {
-        private readonly MvcMovieContext _context;
+        private readonly SomeDbContext _context;
 
-        public SiteName( MvcMovieContext context ){
+        public SiteName( SomeDbContext context ){
             _context = context;
         }
 

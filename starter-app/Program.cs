@@ -9,7 +9,7 @@ Console.WriteLine("Assembly name: "+ Assembly.GetExecutingAssembly().FullName);
 
 if(builder.Environment.IsDevelopment())
 {
-    builder.Services.AddDbContext<MvcMovieContext>(options =>
+    builder.Services.AddDbContext<SomeDbContext>(options =>
         options.UseSqlite(
             builder.Configuration.GetConnectionString("MvcMovieContext") ?? 
             throw new InvalidOperationException(
@@ -17,11 +17,14 @@ if(builder.Environment.IsDevelopment())
 }
 else
 {
-    builder.Services.AddDbContext<MvcMovieContext>(options =>
-        options.UseSqlServer(
-            builder.Configuration.GetConnectionString("ProductionMvcMovieContext") ?? 
+    builder.Services.AddDbContext<SomeDbContext>(
+        options => options.UseSqlServer(
+            builder.Configuration
+                .GetConnectionString("ProductionMvcMovieContext") ?? 
             throw new InvalidOperationException(
-                "PROD Connection string 'MvcMovieContext' not found.")));
+                "PROD Connection string 'MvcMovieContext' not found.")
+        )
+    );
 }
 
 // Add services to the container.
@@ -40,7 +43,9 @@ using (var scope = app.Services.CreateScope())
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    
+    // The default HSTS value is 30 days. You may want to change this for 
+    // production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

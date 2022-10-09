@@ -12,9 +12,9 @@ namespace starter_app.Controllers
 {
     public class HomeTextController : Controller
     {
-        private readonly MvcMovieContext _context;
+        private readonly SomeDbContext _context;
 
-        public HomeTextController(MvcMovieContext context)
+        public HomeTextController(SomeDbContext context)
         {
             _context = context;
         }
