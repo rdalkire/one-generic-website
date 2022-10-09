@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using MvcMovie.Models;
+using starter_app.Data;
+using starter_app.Models;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,18 +12,18 @@ if(builder.Environment.IsDevelopment())
 {
     builder.Services.AddDbContext<SomeDbContext>(options =>
         options.UseSqlite(
-            builder.Configuration.GetConnectionString("MvcMovieContext") ?? 
+            builder.Configuration.GetConnectionString("SomeDbContext") ?? 
             throw new InvalidOperationException(
-                "DEV Connection string 'MvcMovieContext' not found.")));
+                "DEV Connection string 'SomeDbContext' not found.")));
 }
 else
 {
     builder.Services.AddDbContext<SomeDbContext>(
         options => options.UseSqlServer(
             builder.Configuration
-                .GetConnectionString("ProductionMvcMovieContext") ?? 
+                .GetConnectionString("ProductionSomeDbContext") ?? 
             throw new InvalidOperationException(
-                "PROD Connection string 'MvcMovieContext' not found.")
+                "PROD Connection string 'SomeDbContext' not found.")
         )
     );
 }

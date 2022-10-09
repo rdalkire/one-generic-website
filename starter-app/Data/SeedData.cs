@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using starter_app.Models;
 using System;
 using System.Linq;
 
-namespace MvcMovie.Models
+namespace starter_app.Data
 {
     public static class SeedData
     {

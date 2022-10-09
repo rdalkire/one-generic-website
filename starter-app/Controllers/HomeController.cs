@@ -1,6 +1,7 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using starter_app.Data;
 using starter_app.Models;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 
 namespace starter_app.Controllers;
 
@@ -19,7 +20,7 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         ViewData["Body"] = _context.HomeText.Where( 
-            h => h.Name == MvcMovie.Models.HomeTextNames.IndexBody )
+            h => h.Name == starter_app.Models.HomeTextNames.IndexBody )
             .FirstOrDefault()?.Value?? "(undefined index/welcome body)";
 
         return View();
@@ -28,7 +29,7 @@ public class HomeController : Controller
     public IActionResult Privacy()
     {
         ViewData["Body"] = _context.HomeText.Where( 
-            h => h.Name == MvcMovie.Models.HomeTextNames.PrivacyBody )
+            h => h.Name == starter_app.Models.HomeTextNames.PrivacyBody )
             .FirstOrDefault()?.Value?? "(undefined privacy body)";
 
         return View();

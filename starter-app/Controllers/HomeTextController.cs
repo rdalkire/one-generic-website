@@ -1,3 +1,4 @@
+using starter_app.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MvcMovie.Models;
+using starter_app.Models;
 
 namespace starter_app.Controllers
 {
@@ -25,7 +26,7 @@ namespace starter_app.Controllers
               return _context.HomeText != null ? 
                           View(await _context.HomeText.ToListAsync()) :
                           Problem(
-                            "Entity set 'MvcMovieContext.HomeText' is null.");
+                            "Entity set 'SomeDbContext.HomeText' is null.");
         }
 
         // GET: HomeText/Details/5
@@ -173,7 +174,7 @@ namespace starter_app.Controllers
             if (_context.HomeText == null)
             {
                 return Problem(
-                    "Entity set 'MvcMovieContext.HomeText' is null.");
+                    "Entity set 'SomeDbContext.HomeText' is null.");
             }
             var homeText = await _context.HomeText.FindAsync(id);
             if (homeText != null)

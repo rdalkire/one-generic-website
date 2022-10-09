@@ -1,3 +1,4 @@
+using starter_app.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MvcMovie.Models;
+using starter_app.Models;
 
 namespace starter_app.Controllers
 {
@@ -173,7 +174,7 @@ namespace starter_app.Controllers
         {
             if (_context.Movie == null)
             {
-                return Problem("Entity set 'MvcMovieContext.Movie'  is null.");
+                return Problem("Entity set 'SomeDbContext.Movie'  is null.");
             }
             var movie = await _context.Movie.FindAsync(id);
             if (movie != null)

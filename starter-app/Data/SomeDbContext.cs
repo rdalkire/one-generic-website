@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using MvcMovie.Models;
+using starter_app.Models;
+
+namespace starter_app.Data;
 
     public class SomeDbContext : DbContext
     {
@@ -12,7 +14,7 @@ using MvcMovie.Models;
         {
         }
 
-        public DbSet<MvcMovie.Models.Movie> Movie{ get; set; }= default!;
+        public DbSet<starter_app.Models.Movie> Movie{ get; set; }= default!;
 
-        public DbSet<MvcMovie.Models.HomeText> HomeText{ get; set; }= default!;
+        public DbSet<starter_app.Models.HomeText> HomeText{ get; set; }= default!;
     }

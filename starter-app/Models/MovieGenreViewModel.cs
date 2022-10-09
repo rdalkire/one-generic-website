@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 
-namespace MvcMovie.Models
+namespace starter_app.Models
 {
     public class MovieGenreViewModel
     {
