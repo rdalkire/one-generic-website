@@ -65,7 +65,6 @@ namespace starter_app.Controllers
             
             if (ModelState.IsValid)
             {
-                homeText.Value = HtmlEncoder.Default.Encode(homeText.Value!);
                 _context.Add(homeText);
 
                 try
@@ -125,8 +124,7 @@ namespace starter_app.Controllers
             }
 
             if (ModelState.IsValid)
-            {
-                homeText.Value = HtmlEncoder.Default.Encode(homeText.Value!);
+            {   
                 try
                 {
                     _context.Update(homeText);

@@ -28,7 +28,12 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Value)
+                @{
+                    var trunced = item.Value!.Length > 80
+                        ? item.Value.Substring(0, 80) + "..."
+                        : item.Value;
+                }
+                @Html.DisplayFor( modelItem => trunced )
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
