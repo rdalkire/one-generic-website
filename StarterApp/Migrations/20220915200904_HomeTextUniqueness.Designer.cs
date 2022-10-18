@@ -19,7 +19,7 @@ namespace StarterApp.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.8");
 
-            modelBuilder.Entity("starter_app.Models.HomeText", b =>
+            modelBuilder.Entity("StarterApp.Models.HomeText", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -39,7 +39,7 @@ namespace StarterApp.Migrations
                     b.ToTable("HomeText");
                 });
 
-            modelBuilder.Entity("starter_app.Models.Movie", b =>
+            modelBuilder.Entity("StarterApp.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

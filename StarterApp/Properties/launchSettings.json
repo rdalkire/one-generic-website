@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "starter_app": {
+    "StarterApp": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
