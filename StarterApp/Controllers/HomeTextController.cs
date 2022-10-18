@@ -1,4 +1,4 @@
-using starter_app.Data;
+using StarterApp.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using starter_app.Models;
+using StarterApp.Models;
 
-namespace starter_app.Controllers
+namespace StarterApp.Controllers
 {
     public class HomeTextController : Controller
     {

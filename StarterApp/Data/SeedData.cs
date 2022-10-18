@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using starter_app.Models;
+using StarterApp.Models;
 using System;
 using System.Linq;
 
-namespace starter_app.Data
+namespace StarterApp.Data
 {
     public static class SeedData
     {

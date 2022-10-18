@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using starter_app.Models;
+using StarterApp.Models;
 
-namespace starter_app.Data;
+namespace StarterApp.Data;
 
     public class SomeDbContext : DbContext
     {
@@ -14,7 +14,7 @@ namespace starter_app.Data;
         {
         }
 
-        public DbSet<starter_app.Models.Movie> Movie{ get; set; }= default!;
+        public DbSet<StarterApp.Models.Movie> Movie{ get; set; }= default!;
 
-        public DbSet<starter_app.Models.HomeText> HomeText{ get; set; }= default!;
+        public DbSet<StarterApp.Models.HomeText> HomeText{ get; set; }= default!;
     }

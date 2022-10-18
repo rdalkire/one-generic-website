@@ -4,7 +4,8 @@ Mainly for basic blogging.
 
 Things I want to do with this:
 
-  - [ ] Rename the "starter-app" project to "StarterApp"
+  - [x] Rename the "starter-app" project to "StarterApp"  
+        (And update all the namespaces from starter_app to StarterApp)
   - [ ] Add identity framework
   - [ ] Deploy
   - [ ] Separate the parts into a clean (or "onion") architecture

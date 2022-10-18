@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 
-namespace starter_app.Controllers;
+namespace StarterApp.Controllers;
 
 public class PointlessController: Controller
 {

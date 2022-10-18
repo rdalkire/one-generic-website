@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace starter_app.Models
+namespace StarterApp.Models
 {
     public enum HomeTextNames{
         SiteName, IndexBody, PrivacyBody

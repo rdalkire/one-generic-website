@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using starter_app.Data;
+using StarterApp.Data;
 
-namespace starter_app.ViewComponents
+namespace StarterApp.ViewComponents
 {
     public class SiteName: ViewComponent
     {
@@ -16,7 +16,7 @@ namespace starter_app.ViewComponents
             
             var resultText = (
                     await _context.HomeText.Where(
-                        h => h.Name == starter_app.Models.HomeTextNames.SiteName )
+                        h => h.Name == StarterApp.Models.HomeTextNames.SiteName )
                     . FirstOrDefaultAsync()
                 )?.Value?? "(undefined site name)";
 

@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace starter_app.Migrations
+namespace StarterApp.Migrations
 {
     public partial class HomeTextUniqueness : Migration
     {
