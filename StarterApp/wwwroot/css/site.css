@@ -21,3 +21,7 @@ pre {
   white-space: pre-wrap;
   word-break: keep-all
 }
+
+textarea{
+  font-family: 'Courier New', Courier, monospace;
+}
