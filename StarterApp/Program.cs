@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using StarterApp.Data;
 using StarterApp.Models;
 using System.Reflection;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,13 @@ if(builder.Environment.IsDevelopment())
             builder.Configuration.GetConnectionString("SomeDbContext") ?? 
             throw new InvalidOperationException(
                 "DEV Connection string 'SomeDbContext' not found.")));
+    
+    // Post-ID-Scaffold
+    builder.Services.AddDbContext<SomeIdDbContext>(options =>
+        options.UseSqlite(
+            builder.Configuration.GetConnectionString("SomeIdDbContextConnection") ?? 
+            throw new InvalidOperationException(
+                "DEV Connection string 'SomeIdDbContextConnection' not found.")));
 }
 else
 {
@@ -26,7 +34,12 @@ else
                 "PROD Connection string 'SomeDbContext' not found.")
         )
     );
+
+    // TODO Add something for the IdDbContext for PROD
 }
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<SomeIdDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -54,11 +67,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();

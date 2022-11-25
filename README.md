@@ -17,3 +17,5 @@ Things I want to do with this:
       - [ ] Postgres
       - [ ] MySQL
   - [ ] Add image support
+  - [ ] Add a way for user to switch to a dark theme
+  
