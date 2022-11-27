@@ -9,8 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 Console.WriteLine("Assembly name: "+ Assembly.GetExecutingAssembly().FullName);
 
-if(builder.Environment.IsDevelopment())
-{
+/* if(builder.Environment.IsDevelopment())
+{ */
     builder.Services.AddDbContext<SomeDbContext>(options =>
         options.UseSqlite(
             builder.Configuration.GetConnectionString("SomeDbContext") ?? 
@@ -23,7 +23,7 @@ if(builder.Environment.IsDevelopment())
             builder.Configuration.GetConnectionString("SomeIdDbContextConnection") ?? 
             throw new InvalidOperationException(
                 "DEV Connection string 'SomeIdDbContextConnection' not found.")));
-}
+/* }
 else
 {
     builder.Services.AddDbContext<SomeDbContext>(
@@ -36,7 +36,7 @@ else
     );
 
     // TODO Add something for the IdDbContext for PROD
-}
+} */
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<SomeIdDbContext>();
