@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using StarterApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace StarterApp.Controllers
 {
+    [Authorize]
     public class MoviesController : Controller
     {
         private readonly SomeDbContext _context;

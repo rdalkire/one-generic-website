@@ -6,7 +6,9 @@ Things I want to do with this:
 
   - [x] Rename the "starter-app" project to "StarterApp"  
         (And update all the namespaces from starter_app to StarterApp)
-  - [ ] Add identity framework
+  - [x] Add identity framework, customize it just enough to let me log in, and 
+        add just enough authorization so that I'm the only one who can edit
+        things
   - [ ] Deploy
   - [ ] Separate the parts into a clean (or "onion") architecture
   - [ ] Add blog records to CRUD
