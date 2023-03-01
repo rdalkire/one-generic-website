@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 Console.WriteLine("Assembly name: "+ Assembly.GetExecutingAssembly().FullName);
 
+
 /* if(builder.Environment.IsDevelopment())
 { */
     builder.Services.AddDbContext<SomeDbContext>(options =>
@@ -63,7 +64,10 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+// Instead, using a reverse proxy to deal with SSL
+// TODO:  Maybe keep this in place for DEV
+// app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
