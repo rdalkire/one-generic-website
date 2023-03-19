@@ -1,7 +1,8 @@
 ﻿using StarterApp.Data;
-using StarterApp.Models;
+using StarterApp.ViewModels;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using LibForBlog.BlogModels;
 
 namespace StarterApp.Controllers;
 
@@ -20,7 +21,7 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         ViewData["Body"] = _context.HomeText.Where( 
-            h => h.Name == StarterApp.Models.HomeTextNames.IndexBody )
+            h => h.Name == HomeTextNames.IndexBody )
             .FirstOrDefault()?.Value?? "(undefined index/welcome body)";
 
         return View();
@@ -29,7 +30,7 @@ public class HomeController : Controller
     public IActionResult Privacy()
     {
         ViewData["Body"] = _context.HomeText.Where( 
-            h => h.Name == StarterApp.Models.HomeTextNames.PrivacyBody )
+            h => h.Name == HomeTextNames.PrivacyBody )
             .FirstOrDefault()?.Value?? "(undefined privacy body)";
 
         return View();

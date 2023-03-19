@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using StarterApp.Models;
+using LibForBlog.MovieModels;
+using StarterApp.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 
 namespace StarterApp.Controllers

@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using StarterApp.Data;
-using StarterApp.Models;
+using LibForBlog.BlogModels;
 using System.Reflection;
 using Microsoft.AspNetCore.Identity;
 

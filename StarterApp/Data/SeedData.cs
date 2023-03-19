@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using StarterApp.Models;
+using LibForBlog.BlogModels;
 using System;
 using System.Linq;
 
@@ -19,7 +19,7 @@ namespace StarterApp.Data
                 if (!context.Movie.Any())
                 {
                     context.Movie.AddRange(
-                        new Movie
+                        new LibForBlog.MovieModels.Movie
                         {
                             Title = "When Harry Met Sally",
                             ReleaseDate = DateTime.Parse("1989-2-12"),
@@ -28,7 +28,7 @@ namespace StarterApp.Data
                             Price = 7.99M
                         },
 
-                        new Movie
+                        new LibForBlog.MovieModels.Movie
                         {
                             Title = "Ghostbusters ",
                             ReleaseDate = DateTime.Parse("1984-3-13"),
@@ -37,7 +37,7 @@ namespace StarterApp.Data
                             Price = 8.99M
                         },
 
-                        new Movie
+                        new LibForBlog.MovieModels.Movie
                         {
                             Title = "Ghostbusters 2",
                             ReleaseDate = DateTime.Parse("1986-2-23"),
@@ -46,7 +46,7 @@ namespace StarterApp.Data
                             Price = 9.99M
                         },
 
-                        new Movie
+                        new LibForBlog.MovieModels.Movie
                         {
                             Title = "Rio Bravo",
                             ReleaseDate = DateTime.Parse("1959-4-15"),

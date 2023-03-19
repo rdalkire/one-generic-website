@@ -13,10 +13,10 @@ Things I want to do with this:
   - [x] Add a simple "red page" feature, and document the manual deployment 
         process. (This documentation is not part of the source code because
         it's specific to the author's own environment)
-  - [ ] Make the deployment generic and more automated, and test the automation
-  -     using another simple feature update.  Maybe a green page
   - [ ] Separate the parts into a clean (or "onion") architecture.  Or at least
         put models and data-access functionality into separate projects.
+  - [ ] Make the deployment generic and more automated, and test the automation
+  -     using another simple feature update.  Maybe a green page
   - [ ] Add markdown parsing
   - [ ] Add image support
   - [ ] Add blog records to CRUD

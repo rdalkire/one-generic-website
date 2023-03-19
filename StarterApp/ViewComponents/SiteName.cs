@@ -16,7 +16,7 @@ namespace StarterApp.ViewComponents
             
             var resultText = (
                     await _context.HomeText.Where(
-                        h => h.Name == StarterApp.Models.HomeTextNames.SiteName )
+                        h => h.Name == LibForBlog.BlogModels.HomeTextNames.SiteName )
                     . FirstOrDefaultAsync()
                 )?.Value?? "(undefined site name)";
 

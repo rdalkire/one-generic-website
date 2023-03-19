@@ -1,7 +1,7 @@
 ## Files related to sqllite
-StarterApp/*.db
-StarterApp/*.db-shm
-StarterApp/*.db-wal
+**/*.db
+**/*.db-shm
+**/*.db-wal
 
 ## ___
 ## Ignore Visual Studio temporary files, build results, and

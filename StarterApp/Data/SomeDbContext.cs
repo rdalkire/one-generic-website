@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using StarterApp.Models;
+using LibForBlog.BlogModels;
+using LibForBlog.MovieModels;
 
 namespace StarterApp.Data;
 
@@ -14,7 +15,7 @@ namespace StarterApp.Data;
         {
         }
 
-        public DbSet<StarterApp.Models.Movie> Movie{ get; set; }= default!;
+        public DbSet<Movie> Movie{ get; set; }= default!;
 
-        public DbSet<StarterApp.Models.HomeText> HomeText{ get; set; }= default!;
+        public DbSet<HomeText> HomeText{ get; set; }= default!;
     }
