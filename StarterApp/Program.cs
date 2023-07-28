@@ -9,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 Console.WriteLine("Assembly name: "+ Assembly.GetExecutingAssembly().FullName);
 
+Console.WriteLine("Environment.CurrentDirectory: "+ 
+    Environment.CurrentDirectory);
+
 
 /* if(builder.Environment.IsDevelopment())
 { */
@@ -21,9 +24,11 @@ Console.WriteLine("Assembly name: "+ Assembly.GetExecutingAssembly().FullName);
     // Post-ID-Scaffold
     builder.Services.AddDbContext<SomeIdDbContext>(options =>
         options.UseSqlite(
-            builder.Configuration.GetConnectionString("SomeIdDbContextConnection") ?? 
+            builder.Configuration.GetConnectionString(
+                "SomeIdDbContextConnection") ?? 
             throw new InvalidOperationException(
                 "DEV Connection string 'SomeIdDbContextConnection' not found.")));
+                
 /* }
 else
 {

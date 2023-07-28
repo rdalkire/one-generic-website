@@ -1,6 +1,8 @@
 {
     "editor.minimap.enabled": true,
     "cSpell.words": [
+        "Ghostbusters",
         "HSTS"
-    ]
+    ],
+    "dotnet.defaultSolution": "one-generic-website.sln"
 }
