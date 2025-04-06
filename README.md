@@ -5,6 +5,8 @@ Mainly for basic blogging.
 ## To Do
 Things I still want to do with this:
 
+  - [ ] Ensure that the project is using a supported version of dotnet
+  - [ ] Port it to an API/React architecture
   - [ ] Separate the parts into a clean (or "onion") architecture.  Or at least
         put models and data-access functionality into separate projects.
   - [ ] Make the deployment generic and more automated, and test the automation
