@@ -6,6 +6,7 @@ Mainly for basic blogging.
 Things I still want to do with this:
   - [ ] Via a hyperlink, incorporate a separately-created react app that hooks into the same identity model, somehow
   - [ ] Port the main blog part to an API/React architecture
+  - [ ] Be sure to try out [Tanstack Query](https://tanstack.com/query/latest) for data fetching
   - [ ] Separate the parts into a clean (or "onion") architecture.  Or at least
         put models and data-access functionality into separate projects.
   - [ ] Make the deployment generic and more automated, and test the automation
