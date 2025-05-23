@@ -4,9 +4,8 @@ Mainly for basic blogging.
 
 ## To Do
 Things I still want to do with this:
-
-  - [x] Ensure that the project is using a supported version of dotnet
-  - [ ] Port it to an API/React architecture
+  - [ ] Via a hyperlink, incorporate a separately-created react app that hooks into the same identity model, somehow
+  - [ ] Port the main blog part to an API/React architecture
   - [ ] Separate the parts into a clean (or "onion") architecture.  Or at least
         put models and data-access functionality into separate projects.
   - [ ] Make the deployment generic and more automated, and test the automation
@@ -25,9 +24,10 @@ Things I still want to do with this:
 
 ## Done already
 
-  - [x] Rename the "starter-app" project to "StarterApp"  
+  - [x] Updated to .NET 8, which is [good until 11/10/2026](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core)
+  - [x] Renames the "starter-app" project to "StarterApp"  
         (And update all the namespaces from starter_app to StarterApp)
-  - [x] Add identity framework, customize it just enough to let me log in, and 
+  - [x] Added identity framework, customize it just enough to let me log in, and 
         add just enough authorization so that I'm the only one who can edit
         things
   - [x] Deploy
