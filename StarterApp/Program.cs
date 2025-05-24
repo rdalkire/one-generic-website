@@ -41,7 +41,7 @@ else
         )
     );
 
-    // TODO Add something for the IdDbContext for PROD
+    // [ ] 1025 Add something for the IdDbContext for PROD
 } */
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -70,7 +70,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 // Instead, using a reverse proxy to deal with SSL
-// TODO:  Maybe keep this in place for DEV
+// [ ] 5000  Maybe keep this, UseHttpsRedirection() in place for DEV
 // app.UseHttpsRedirection();
 
 app.UseStaticFiles();
