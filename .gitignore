@@ -2,6 +2,7 @@
 **/*.db
 **/*.db-shm
 **/*.db-wal
+**/*db*.bak
 
 ## ___
 ## Ignore Visual Studio temporary files, build results, and
